@@ -44,7 +44,7 @@ class BarChart{
             // LOOPS COLOURS
             let numColour = x % 4;
             fill(color(colour[numColour]));
-            rect(x*barSpace,0,barWidth,this.scaleMeBabes(-value),5,5,5,5);
+            rect(x*barSpace,0,barWidth,this.scaleMeBabes(-value),4,4,4,4);
         }
         pop();
     }
@@ -74,6 +74,7 @@ class BarChart{
             noStroke();
             fill(250);
             textSize(14);
+            textFont("Courier Prime");
             textAlign(RIGHT,CENTER)
             // PLACES TEXT ALONG THE TICKS 
             text(y*maxGap,-15,-tGap*y);
@@ -105,7 +106,6 @@ class BarChart{
             fill(250);
             noStroke();
             textSize(14);
-            textStyle(BOLD);
             textAlign(LEFT,TOP)
             // CENTERS THE TEXT WITH THE BARS
             text(value,0,0);

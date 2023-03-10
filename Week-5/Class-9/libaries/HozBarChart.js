@@ -72,6 +72,7 @@ class HozBarChart{
             noStroke();
             fill(250);
             textSize(14);
+            textFont("Courier Prime");
             textAlign(CENTER)
             // PLACES TEXT ALONG THE TICKS
             text(y*maxGap,tGap*y, 20);

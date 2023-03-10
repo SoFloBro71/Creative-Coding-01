@@ -18,7 +18,7 @@ class StackedChart {
         this.valueWidth = _valueWidth;
         this.colour = [ '#A288E3','#CEFDFF','#CCFFCB','#BBD5ED', ];
         this.header = "Deaths by suicide classified by year of occurrence and sex 2011-2019";
-        this.unit = "Suicides";
+        this.unit = "Amount";
         this.label1 = "Females";
         this.label2 = "Males";
     }
@@ -52,12 +52,10 @@ class StackedChart {
             for (let y = 0; y < this.value.length; y++) {
             
             let value = int(this.data.rows[x].obj[this.value[y]]);
-            let title = this.data.rows[x].obj.Year;
+            // let title = this.data.rows[x].obj.Year;
             // console.log(colour)
             fill(color(this.colour[y % this.colour.length]));
-            rect(x/barSpace, 0, barWidth, this.scaleMeBabes(-value),2,2,2,2);
-
-
+            rect(x/barSpace, 0, barWidth, this.scaleMeBabes(-value));
             translate(0,this.scaleMeBabes(-value))
             }
             pop()
@@ -102,12 +100,13 @@ class StackedChart {
             noStroke();
             fill(250);
             textSize(14);
+            textFont("Courier Prime");
             textAlign(RIGHT,CENTER)
             // PLACES TEXT ALONG THE TICKS
             text(y*maxGap,-15,-tGap*y);
 
             // TITLE
-            text(this.header, this.width,-this.height-this.space)
+            text(this.header, 490,-this.height-this.space)
             // UNIT
             text(this.unit, -50,-160)
 
