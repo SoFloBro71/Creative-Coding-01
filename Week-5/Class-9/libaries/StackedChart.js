@@ -100,13 +100,18 @@ class StackedChart {
             noStroke();
             fill(250);
             textSize(14);
-            textFont("Courier Prime");
+
             textAlign(RIGHT,CENTER)
             // PLACES TEXT ALONG THE TICKS
             text(y*maxGap,-15,-tGap*y);
 
             // TITLE
+            push();
+            textStyle(BOLD);
+            textFont("Courier Prime");
             text(this.header, 490,-this.height-this.space)
+            pop();
+
             // UNIT
             text(this.unit, -50,-160)
 

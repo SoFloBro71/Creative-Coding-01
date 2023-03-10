@@ -51,9 +51,9 @@ class HozBarChart{
     hLine(){
         // THIS IS THE HORIZONTAL LINE
         stroke(250);
-        line(0 ,0, this.width+11,0);
-        push();
         translate(this.margin,0);
+        line(0 ,0, this.width,0);
+        push();
     }
 
 
@@ -72,12 +72,16 @@ class HozBarChart{
             noStroke();
             fill(250);
             textSize(14);
-            textFont("Courier Prime");
             textAlign(CENTER)
             // PLACES TEXT ALONG THE TICKS
             text(y*maxGap,tGap*y, 20);
             // TITLE
+            push();
+            textStyle(BOLD);
+            textFont("Courier Prime");
             text(this.header, 200,-this.height-this.space)
+            pop();
+
             text(this.unit, 150,50)
         };
 
