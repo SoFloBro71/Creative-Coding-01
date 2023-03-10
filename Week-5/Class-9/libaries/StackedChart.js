@@ -16,7 +16,11 @@ class StackedChart {
         this.space = 20;
         this.value = ["Male", "Female"]
         this.valueWidth = _valueWidth;
-        this.colour = [ '#A288E3','#CEFDFF','#CCFFCB','#BBD5ED', ]
+        this.colour = [ '#A288E3','#CEFDFF','#CCFFCB','#BBD5ED', ];
+        this.header = "Deaths by suicide classified by year of occurrence and sex 2011-2019";
+        this.unit = "Suicides";
+        this.label1 = "Females";
+        this.label2 = "Males";
     }
 
     render() {
@@ -103,22 +107,22 @@ class StackedChart {
             text(y*maxGap,-15,-tGap*y);
 
             // TITLE
-            text("Deaths by suicide classified by year of occurrence and sex 2011-2019", this.width,-this.height-this.space)
+            text(this.header, this.width,-this.height-this.space)
             // UNIT
-            text("Suicides", -50,-160)
+            text(this.unit, -50,-160)
 
             // LEGEND
             // MALES
             fill('#A288E3')
             rect(500,-this.height-this.space,15,15)
             fill(250);
-            text("Males", 570,-312)
+            text(this.label2, 570,-312)
 
             // FEMALES
             fill('#CEFDFF')
             rect(500,-290,15,15)
             fill(250);
-            text("Females", 580,-280)
+            text(this.label1, 580,-280)
             }
         }
 

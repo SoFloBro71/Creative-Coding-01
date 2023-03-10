@@ -14,6 +14,8 @@ class HozBarChart{
         this.xLabels = _xLabels;
         this.maxValue = this.getMaxValue();
         this.space = 5;
+        this.header = "Afforestation Area by County 2007-2021";
+        this.unit = "Unit (Hectares)";
     }
 
     letsDraw(){
@@ -74,8 +76,8 @@ class HozBarChart{
             // PLACES TEXT ALONG THE TICKS
             text(y*maxGap,tGap*y, 20);
             // TITLE
-            text("Afforestation Area by County 2007-2021", 200,-this.height-this.space)
-            text("Unit (Hectares)", 150,50)
+            text(this.header, 200,-this.height-this.space)
+            text(this.unit, 150,50)
         };
 
     }

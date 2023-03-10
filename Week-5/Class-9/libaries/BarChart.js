@@ -14,6 +14,8 @@ class BarChart{
         this.xLabels = _xLabels;
         this.maxValue = this.getMaxValue();
         this.space = 20;
+        this.header = "Afforestation Area by County 2007-2021";
+        this.unit = "Unit (Hectares)";
     }
 
     draw(){
@@ -77,9 +79,9 @@ class BarChart{
             text(y*maxGap,-15,-tGap*y);
 
             // TITLE
-            text("Afforestation Area by County 2007-2021", 300,-this.height-this.space)
+            text(this.header, 300,-this.height-this.space)
             // UNIT 
-            text("Unit (Hectares)", -50,-160)
+            text(this.unit, -50,-160)
 
         };
 
