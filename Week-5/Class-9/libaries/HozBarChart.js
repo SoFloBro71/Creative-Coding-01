@@ -22,8 +22,8 @@ class HozBarChart{
         noFill();
         push();
         translate(this.XPos, this.YPos);
-        this.HLine();
-        this.VLine();
+        this.hLine();
+        this.vLine();
         this.bars();
         this.labels();
         pop(); 
@@ -43,12 +43,12 @@ class HozBarChart{
             // LOOPS COLOURS
             let numColour = x % 4;
             fill(color(colour[numColour]));
-            rect(0, x*barSpace,this.scaleMeBabes(value),barWidth);
+            rect(0, x*barSpace,this.scaleMeBabes(value),barWidth,5,5,5,5);
         }
         pop();
     }
 
-    HLine(){
+    hLine(){
         // THIS IS THE HORIZONTAL LINE
         stroke(250);
         line(0 ,0, this.width+11,0);
@@ -57,7 +57,7 @@ class HozBarChart{
     }
 
 
-    VLine(){
+    vLine(){
         // THIS IS THE VERTICAL LINE
         stroke(250);
         line(0, 0, 0, -this.height);

@@ -23,8 +23,8 @@ class BarChart{
 
         push();
         translate(this.XPos, this.YPos);
-        this.HLine();
-        this.VLine();
+        this.hLine();
+        this.vLine();
         this.bars();
         this.labels();
         pop(); 
@@ -44,12 +44,12 @@ class BarChart{
             // LOOPS COLOURS
             let numColour = x % 4;
             fill(color(colour[numColour]));
-            rect(x*barSpace,0,barWidth,this.scaleMeBabes(-value));
+            rect(x*barSpace,0,barWidth,this.scaleMeBabes(-value),5,5,5,5);
         }
         pop();
     }
 
-    HLine(){
+    hLine(){
         // THIS IS THE HORIZONTAL LINE
         stroke(250);
         line(0 ,0, this.width,0);
@@ -58,7 +58,7 @@ class BarChart{
     }
 
 
-    VLine(){
+    vLine(){
         // THIS IS THE VERTICAL LINE
         stroke(250);
         line(0, 0, 0, -this.height);

@@ -30,8 +30,8 @@ class StackedChart {
         translate(this.XPos, this.YPos);
         this.maxValue = this.getMaxValue();
         // Width and Height
-        this.HLine();
-        this.VLine();
+        this.hLine();
+        this.vLine();
         // Bars
         this.stackedBars();
         pop();
@@ -55,7 +55,7 @@ class StackedChart {
             let title = this.data.rows[x].obj.Year;
             // console.log(colour)
             fill(color(this.colour[y % this.colour.length]));
-            rect(x/barSpace, 0, barWidth, this.scaleMeBabes(-value));
+            rect(x/barSpace, 0, barWidth, this.scaleMeBabes(-value),2,2,2,2);
 
 
             translate(0,this.scaleMeBabes(-value))
@@ -65,7 +65,7 @@ class StackedChart {
             }
         }
 
-        HLine(){
+        hLine(){
             // THIS IS THE HORIZONTAL LINE
             stroke(250);
             line(0 ,0, this.width,0);
@@ -86,7 +86,7 @@ class StackedChart {
             // }
         }
 
-        VLine() {
+        vLine() {
         // THIS IS THE VERTICAL LINE
         stroke(250);
         line(0, 0, 0, -this.height);
